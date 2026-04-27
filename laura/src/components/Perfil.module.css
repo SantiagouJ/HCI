@@ -1,0 +1,410 @@
+/* ── Screen wrapper ─────────────────────────────────────────── */
+.screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #f5f6f8;
+  padding: max(env(safe-area-inset-top), 48px) 20px calc(env(safe-area-inset-bottom, 0px) + 90px);
+  box-sizing: border-box;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+.title {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.15;
+  color: #1d1d1d;
+  margin: 0 0 18px 0;
+}
+
+/* ── Profile card ───────────────────────────────────────────── */
+.profileCard {
+  background: #fff;
+  border-radius: 13px;
+  padding: 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatarWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f2f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarIcon {
+  width: 32px;
+  height: 32px;
+  color: #469fff;
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profileName {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+.profileEmail {
+  font-size: 13px;
+  color: #6a7282;
+  line-height: 1.4;
+}
+
+.editBtn {
+  padding: 8px 16px;
+  background: #f2f7ff;
+  color: #469fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.editBtn:active {
+  opacity: 0.8;
+  transform: scale(0.97);
+}
+
+/* ── Shared card ────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 13px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Section header ─────────────────────────────────────────── */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.sectionIcon {
+  width: 20px;
+  height: 20px;
+  color: #469fff;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+/* ── Settings list (toggles) ────────────────────────────────── */
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.settingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  text-align: left;
+}
+
+.settingRow:active {
+  opacity: 0.7;
+}
+
+.settingInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.settingLabel {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+.settingDesc {
+  font-size: 12.5px;
+  color: #6a7282;
+  line-height: 1.4;
+}
+
+.toggleOn {
+  width: 36px;
+  height: 36px;
+  color: #469fff;
+  flex-shrink: 0;
+}
+
+.toggleOff {
+  width: 36px;
+  height: 36px;
+  color: #d1d5db;
+  flex-shrink: 0;
+}
+
+/* ── Links list ─────────────────────────────────────────────── */
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.linkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  background: none;
+  border: none;
+  border-top: 1px solid #f0f0f2;
+  width: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.linkRow:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.linkRow:last-child {
+  padding-bottom: 0;
+}
+
+.linkRow:active {
+  opacity: 0.7;
+}
+
+.linkLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.linkIcon {
+  width: 20px;
+  height: 20px;
+  color: #6a7282;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkIcon > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.linkLabel {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+.linkRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.linkValue {
+  font-size: 14px;
+  color: #6a7282;
+  line-height: 1;
+}
+
+.chevron {
+  width: 18px;
+  height: 18px;
+  color: #d1d5db;
+  flex-shrink: 0;
+}
+
+/* ── Danger variant ─────────────────────────────────────────── */
+.danger .linkIcon {
+  color: #ef4444;
+}
+
+.danger .linkLabel {
+  color: #ef4444;
+}
+
+.danger .chevron {
+  color: #ef4444;
+  opacity: 0.5;
+}
+
+/* ── Payment methods ───────────────────────────────────────── */
+.paymentList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.paymentCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.cardIconWrap {
+  width: 48px;
+  height: 32px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #1a1f71 0%, #2d3494 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardBrand {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.cardBrandMc {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #eb001b 0%, #f79e1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cardIconWrap:has(.cardBrandMc) {
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+}
+
+.cardInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardNumber {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #101828;
+  line-height: 1.35;
+  letter-spacing: 0.5px;
+}
+
+.cardExpiry {
+  font-size: 12px;
+  color: #6a7282;
+  line-height: 1.4;
+}
+
+.defaultBadge {
+  padding: 4px 10px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.addPaymentBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: #f2f7ff;
+  color: #469fff;
+  border: 1px dashed #469fff;
+  border-radius: 12px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.addPaymentBtn:active {
+  opacity: 0.8;
+  transform: scale(0.99);
+}
+
+.addPaymentIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.footer {
+  margin: 24px 0 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+  line-height: 1.4;
+}

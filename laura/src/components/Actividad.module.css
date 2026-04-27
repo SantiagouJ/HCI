@@ -1,0 +1,319 @@
+/* ── Screen wrapper ─────────────────────────────────────────── */
+.screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #f5f6f8;
+  padding: max(env(safe-area-inset-top), 48px) 20px calc(env(safe-area-inset-bottom, 0px) + 90px);
+  box-sizing: border-box;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+.title {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.15;
+  color: #1d1d1d;
+  margin: 0 0 18px 0;
+}
+
+/* ── Shared card ────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 13px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Blue highlight card ─────────────────────────────────────── */
+.highlightCard {
+  background: #469fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 24px rgba(18, 101, 118, 0.12);
+}
+
+.highlightIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlightIcon {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.highlightText {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #f9fdff;
+  margin: 0;
+}
+
+.highlightText strong {
+  font-weight: 700;
+}
+
+/* ── Location card ──────────────────────────────────────────── */
+.locationRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.locationIcon {
+  width: 18px;
+  height: 18px;
+  color: #469fff;
+  flex-shrink: 0;
+}
+
+.locationTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #101828;
+  line-height: 1.4;
+}
+
+.locationSub {
+  margin: 0;
+  font-size: 12.5px;
+  color: #364153;
+  line-height: 1.43;
+  padding-left: 26px;
+}
+
+/* ── Shared card header ─────────────────────────────────────── */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+/* ── Completado badge ───────────────────────────────────────── */
+.completedBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #2ed26f;
+  white-space: nowrap;
+}
+
+.completedIcon {
+  width: 16px;
+  height: 16px;
+  color: #2ed26f;
+}
+
+/* ── Today's outings grid ───────────────────────────────────── */
+.todayGrid {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 10px;
+}
+
+.todayCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.durationRow {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.detailLabel {
+  font-weight: 500;
+  font-size: 15px;
+  color: #494551;
+  letter-spacing: 0.27px;
+  line-height: 1.22;
+}
+
+.detailValue {
+  font-size: 15px;
+  color: #4a5565;
+  line-height: 1.38;
+}
+
+/* ── Weekly chart ───────────────────────────────────────────── */
+.avgRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.trendIcon {
+  width: 14px;
+  height: 14px;
+  color: #469fff;
+  flex-shrink: 0;
+}
+
+.avgText {
+  font-size: 13px;
+  color: #4a5565;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.weekChart {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.weekRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 29px;
+}
+
+.weekDay {
+  font-size: 13px;
+  color: #4a5565;
+  width: 28px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Track: full-width gray pill */
+.barTrack {
+  flex: 1;
+  height: 29px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Filled portion (blue pill) */
+.barFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #469fff;
+  border-radius: 999px;
+  max-width: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Labels overlaid on top of the bar */
+.barLabels {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 0 10px;
+  z-index: 1;
+}
+
+.barLabelLeft {
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.barLabelRight {
+  font-size: 12px;
+  white-space: nowrap;
+  line-height: 1;
+  /* color is set inline — white when full, dark when partial */
+}
+
+/* ── Recent history list ────────────────────────────────────── */
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  border-radius: 9px;
+  padding: 10px 11px;
+}
+
+.historyLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weatherIcon {
+  width: 16px;
+  height: 16px;
+  color: #f5a623;
+  flex-shrink: 0;
+}
+
+.historyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.historyDate {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 12.5px;
+  color: #101828;
+  line-height: 1.43;
+  white-space: nowrap;
+}
+
+.historyDuration {
+  font-size: 11px;
+  color: #4a5565;
+  line-height: 1.4;
+}
+
+.clockIcon {
+  width: 14px;
+  height: 14px;
+  color: #9ca3af;
+  flex-shrink: 0;
+}

@@ -1,0 +1,300 @@
+/* ── Screen wrapper ─────────────────────────────────────────── */
+.screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #f5f6f8;
+  padding: env(safe-area-inset-top, 48px) 20px calc(env(safe-area-inset-bottom, 0px) + 90px);
+  padding-top: max(env(safe-area-inset-top), 48px);
+  box-sizing: border-box;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.15;
+  color: #1d1d1d;
+  margin: 0;
+}
+
+.newMissionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px 9px 12px;
+  background: #469fff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.newMissionBtn:active {
+  opacity: 0.82;
+  transform: scale(0.97);
+}
+
+.btnIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ── Date section ───────────────────────────────────────────── */
+.dateSection {
+  margin-bottom: 18px;
+}
+
+.dateLabel {
+  display: block;
+  font-size: 14px;
+  color: #6a7282;
+  line-height: 1.43;
+  margin-bottom: 2px;
+}
+
+.dateText {
+  margin: 0;
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1d1d1d;
+  line-height: 1.55;
+  text-transform: capitalize;
+}
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 13px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Wellness / summary card ────────────────────────────────── */
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.statusDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #00c950;
+  flex-shrink: 0;
+}
+
+.statusTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1d1d1d;
+  line-height: 1;
+}
+
+.taskList {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.checkboxCol {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 2px;
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  color: #6a7282;
+  flex-shrink: 0;
+}
+
+.taskItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.taskDone {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #4d4e4f;
+  text-decoration: line-through;
+  text-decoration-skip-ink: none;
+}
+
+/* ── Standard card row ──────────────────────────────────────── */
+.cardRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 7px;
+  background: #f2f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardIcon {
+  width: 26px;
+  height: 26px;
+}
+
+/* cardInfo MUST have flex:1 so text fills space and wraps */
+.cardInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cardCategory {
+  font-size: 12.5px;
+  color: #6a7282;
+  line-height: 1.43;
+}
+
+.cardMainValue {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #101828;
+  line-height: 1.4;
+}
+
+.cardDetail {
+  font-size: 15px;
+  color: #4a5565;
+  line-height: 1.38;
+  overflow-wrap: break-word;
+}
+
+/* ── Detail rows (below divider) ────────────────────────────── */
+.divider {
+  height: 1px;
+  background: #e6e0e9;
+  margin: 13px 0;
+}
+
+.detailRows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detailRow {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.detailLabel {
+  font-weight: 500;
+  font-size: 15px;
+  color: #494551;
+  width: 76px;
+  flex-shrink: 0;
+  letter-spacing: 0.27px;
+}
+
+.detailValue {
+  flex: 1;
+  font-size: 15px;
+  color: #4a5565;
+  line-height: 1.38;
+  overflow-wrap: break-word;
+}
+
+/* ── Missions card (trophy ribbon variant) ──────────────────── */
+.missionCard {
+  background: #fff;
+  border-radius: 13px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  /* Normal card padding — ribbon sits inside as absolute element */
+  padding: 16px 18px;
+}
+
+/*
+ * Ribbon sits at the very top-left of the card.
+ * left: 16px aligns it with the card's left padding (18px) minus 2px visual gap.
+ * height: 82px covers the header content area and then notches below it.
+ */
+.trophyBanner {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  width: 44px;
+  height: 82px;
+  background: #00c950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Bookmark notch at bottom */
+  clip-path: polygon(0 0, 100% 0, 100% 84%, 50% 100%, 0 84%);
+}
+
+.trophyIcon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  /* Push icon slightly above center so it sits in the solid part, not the notch */
+  margin-bottom: 8px;
+}
+
+/*
+ * Header: offset to the right of the ribbon.
+ * ribbon left (16px) + ribbon width (44px) + gap (8px) = 68px from card edge.
+ * card padding-left is 18px, so we need 68 - 18 = 50px additional left padding.
+ */
+.missionHeader {
+  padding-left: 50px;
+  min-height: 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+/*
+ * Divider + detailRows are NOT offset — they use the card's normal 18px padding,
+ * starting flush with the left edge of the card content area (below the ribbon).
+ */

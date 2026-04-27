@@ -1,0 +1,560 @@
+/* ── Screen wrapper ─────────────────────────────────────────── */
+.screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #f5f6f8;
+  padding: env(safe-area-inset-top, 48px) 20px calc(env(safe-area-inset-bottom, 0px) + 90px);
+  padding-top: max(env(safe-area-inset-top), 48px);
+  box-sizing: border-box;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.15;
+  color: #1d1d1d;
+  margin: 0;
+}
+
+.newMissionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px 9px 12px;
+  background: #469fff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.newMissionBtn:active {
+  opacity: 0.82;
+  transform: scale(0.97);
+}
+
+.btnIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ── Blue highlight card ─────────────────────────────────────── */
+.highlightCard {
+  background: #469fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 24px rgba(18, 101, 118, 0.12);
+}
+
+.highlightIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlightIcon {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.highlightText {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #f9fdff;
+  margin: 0;
+}
+
+.highlightText strong {
+  font-weight: 700;
+}
+
+/* ── Shared card ────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 13px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Card header ─────────────────────────────────────────────── */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+.addBtn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.addBtn:active {
+  opacity: 0.7;
+}
+.newMissionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px 9px 12px;
+  background: #469fff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.newMissionBtn:active {
+  opacity: 0.82;
+  transform: scale(0.97);
+}
+
+.btnIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.addIcon {
+  width: 24px;
+  height: 24px;
+  color: #469fff;
+}
+
+/* ── Section header ─────────────────────────────────────────── */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.sectionIcon {
+  width: 20px;
+  height: 20px;
+  color: #469fff;
+  flex-shrink: 0;
+}
+
+.sectionIconGold {
+  width: 20px;
+  height: 20px;
+  color: #f5a623;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+/* ── Active missions list ───────────────────────────────────── */
+.missionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.missionItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.missionIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #ede9fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.missionIcon {
+  width: 22px;
+  height: 22px;
+  color: #7c3aed;
+}
+
+.missionInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.missionTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #101828;
+  line-height: 1.3;
+}
+
+.missionDesc {
+  font-size: 13px;
+  color: #6a7282;
+  line-height: 1.4;
+}
+
+.missionMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.progressText {
+  font-weight: 600;
+  font-size: 12px;
+  color: #469fff;
+}
+
+.daysText {
+  font-size: 12px;
+  color: #6a7282;
+}
+
+.chevron {
+  width: 18px;
+  height: 18px;
+  color: #d1d5db;
+  flex-shrink: 0;
+}
+
+/* ── Progress bar ───────────────────────────────────────────── */
+.progressBarTrack {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: #469fff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* ── Filter tabs ────────────────────────────────────────────── */
+.filterTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filterTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.filterTab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 20px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6a7282;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.filterTab:active {
+  background: #e5e7eb;
+}
+
+.filterTabActive {
+  background: #469fff;
+  color: #fff;
+}
+
+.filterDotPending {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fbbf24;
+}
+
+.filterTabActive .filterDotPending {
+  background: #fef3c7;
+}
+
+.filterDotCompleted {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.filterTabActive .filterDotCompleted {
+  background: #dcfce7;
+}
+
+/* ── Missions list ──────────────────────────────────────────── */
+.missionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.missionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #f0f0f2;
+}
+
+.missionRow:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.missionRow:last-child {
+  padding-bottom: 0;
+}
+
+.missionRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.pendingIcon {
+  width: 20px;
+  height: 20px;
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.missionRowInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.missionRowTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+.missionRowReward {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #6a7282;
+  line-height: 1.4;
+}
+
+.giftIcon {
+  width: 12px;
+  height: 12px;
+  color: #7c8597;
+  flex-shrink: 0;
+}
+
+/* ── Status badges ──────────────────────────────────────────── */
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.badgePending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badgeCompleted {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ── Rewards list ───────────────────────────────────────────── */
+.rewardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Reward card ────────────────────────────────────────────── */
+.rewardCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.rewardCard:last-child {
+  margin-bottom: 0;
+}
+
+.rewardImageWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.rewardEmoji {
+  font-size: 24px;
+}
+
+.rewardInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rewardTitle {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #101828;
+  line-height: 1.35;
+}
+
+.rewardGoal {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #6a7282;
+  line-height: 1.4;
+}
+
+.goalIcon {
+  width: 12px;
+  height: 12px;
+  color: #6a7282;
+}
+
+.rewardProgressRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.rewardPercent {
+  font-weight: 600;
+  font-size: 12px;
+  color: #469fff;
+}
+
+.rewardDays {
+  font-size: 12px;
+  color: #6a7282;
+}

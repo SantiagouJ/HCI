@@ -1,0 +1,93 @@
+/* ── Navbar container ─────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.navContent {
+  max-width: 430px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  padding: 8px 12px 10px;
+}
+
+/* ── Nav item ────────────────────────────────────────────────── */
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background-color 0.15s ease;
+}
+
+.navItem:active {
+  background: rgba(70, 159, 255, 0.08);
+}
+
+/* ── Icon wrapper ────────────────────────────────────────────── */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #9ca3af;
+  transition: color 0.15s ease;
+}
+
+/* ── Label ───────────────────────────────────────────────────── */
+.label {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #9ca3af;
+  transition: color 0.15s ease;
+}
+
+/* ── Active state ────────────────────────────────────────────── */
+.navItem.active .icon {
+  color: #469fff;
+}
+
+.navItem.active .label {
+  color: #469fff;
+  font-weight: 600;
+}
+
+/* ── Hover state (for desktop testing) ───────────────────────── */
+@media (hover: hover) {
+  .navItem:hover:not(.active) {
+    background: rgba(70, 159, 255, 0.05);
+  }
+
+  .navItem:hover:not(.active) .icon {
+    color: #6a7282;
+  }
+
+  .navItem:hover:not(.active) .label {
+    color: #6a7282;
+  }
+}

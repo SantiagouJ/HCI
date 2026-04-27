@@ -1,0 +1,162 @@
+/* ── Screen wrapper ─────────────────────────────────────────── */
+.screen {
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #f9f5f0;
+  padding: 48px 20px 40px;
+  box-sizing: border-box;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Title ─────────────────────────────────────────────────── */
+.title {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.15;
+  color: #1d1d1d;
+  margin: 0 0 48px 0;
+  text-align: center;
+}
+
+/* ── Blue highlight card ─────────────────────────────────────── */
+.highlightCard {
+  background: #469fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 24px rgba(18, 101, 118, 0.12);
+  width: 100%;
+  max-width: 400px;
+}
+
+.highlightIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlightIcon {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.highlightText {
+  font-family: 'Satoshi', 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #f9fdff;
+  margin: 0;
+}
+
+.highlightText strong {
+  font-weight: 700;
+}
+
+/* ── Carousel ─────────────────────────────────────────────────── */
+.carousel {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: transform 0.4s ease;
+}
+
+/* ── Dots indicator ─────────────────────────────────────────── */
+.dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dotActive {
+  background: #469fff;
+  transform: scale(1.2);
+}
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+.footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.footerText {
+  font-size: 14px;
+  color: #6a7282;
+}
+
+/* ── Tablet Breakpoint (768px+) ───────────────────────────────── */
+@media (min-width: 768px) {
+  .screen {
+    padding: 56px 40px 48px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 56px;
+  }
+
+  .highlightCard {
+    max-width: 480px;
+    padding: 24px 32px;
+  }
+
+  .highlightText {
+    font-size: 20px;
+  }
+
+  .carousel {
+    max-width: 380px;
+  }
+
+  .dots {
+    gap: 12px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* ── Desktop Breakpoint (1024px+) ─────────────────────────────── */
+@media (min-width: 1024px) {
+  .screen {
+    padding: 64px 64px 56px;
+  }
+
+  .title {
+    font-size: 40px;
+    margin-bottom: 64px;
+  }
+
+  .carousel {
+    max-width: 420px;
+  }
+}
