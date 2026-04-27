@@ -7,8 +7,9 @@ import {
   GiftFilled,
   WalletCreditCardFilled,
   VehicleBicycleFilled,
+  CheckmarkCircleFilled,
 } from '@fluentui/react-icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './NewMissionPopup.module.css';
 
 type PopupStep = 1 | 2 | 3 | 4;
@@ -70,8 +71,20 @@ export default function NewMissionPopup({ isOpen, onClose, existingRewards, onCr
   const [newRewardEmoji, setNewRewardEmoji] = useState('🎁');
   const [selectedDeliveryApp, setSelectedDeliveryApp] = useState<string>('rappi');
   const [selectedPayment, setSelectedPayment] = useState<number>(1);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [createdMissionTitle, setCreatedMissionTitle] = useState('');
 
   const emojiOptions = ['🎁', '🍎', '🍰', '🍦', '🎬', '🎮', '📚', '🌟', '🎉', '❤️'];
+
+  useEffect(() => {
+    if (showSuccess) {
+      const timer = setTimeout(() => {
+        setShowSuccess(false);
+        handleClose();
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccess]);
 
   const totalSteps = rewardOption === 'new' ? 4 : 3;
   const isDeliveryStep = rewardOption === 'new' && step === 3;
@@ -88,6 +101,8 @@ export default function NewMissionPopup({ isOpen, onClose, existingRewards, onCr
     setNewRewardEmoji('🎁');
     setSelectedDeliveryApp('rappi');
     setSelectedPayment(1);
+    setShowSuccess(false);
+    setCreatedMissionTitle('');
     onClose();
   };
 
@@ -111,7 +126,9 @@ export default function NewMissionPopup({ isOpen, onClose, existingRewards, onCr
       deliveryApp: rewardOption === 'new' ? selectedDeliveryApp : undefined,
       paymentMethodId: selectedPayment,
     });
-    handleClose();
+    
+    setCreatedMissionTitle(missionTitle);
+    setShowSuccess(true);
   };
 
   const canProceed = () => {
@@ -134,6 +151,29 @@ export default function NewMissionPopup({ isOpen, onClose, existingRewards, onCr
   };
 
   if (!isOpen) return null;
+
+  if (showSuccess) {
+    return (
+      <div className={styles.popupOverlay}>
+        <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.successContainer}>
+            <div className={styles.successIconWrap}>
+              <CheckmarkCircleFilled className={styles.successIcon} />
+            </div>
+            <h2 className={styles.successTitle}>¡Misión Creada!</h2>
+            <p className={styles.successMessage}>
+              La misión "{createdMissionTitle}" ha sido enviada a Manuel
+            </p>
+            <div className={styles.successDots}>
+              <span className={styles.successDot} />
+              <span className={styles.successDot} />
+              <span className={styles.successDot} />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.popupOverlay} onClick={handleClose}>
@@ -173,7 +213,7 @@ export default function NewMissionPopup({ isOpen, onClose, existingRewards, onCr
                 <input
                   type="text"
                   className={styles.textInput}
-                  placeholder="Ej: Caminar 30 minutos"
+                  placeholder="Caminar 30 minutos"
                   value={missionTitle}
                   onChange={(e) => setMissionTitle(e.target.value)}
                 />
@@ -239,7 +279,7 @@ export default function NewMissionPopup({ isOpen, onClose, existingRewards, onCr
                     <input
                       type="text"
                       className={styles.textInput}
-                      placeholder="Ej: Postre favorito"
+                      placeholder="Postre favorito"
                       value={newRewardTitle}
                       onChange={(e) => setNewRewardTitle(e.target.value)}
                     />

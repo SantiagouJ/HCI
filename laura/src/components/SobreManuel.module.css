@@ -286,7 +286,7 @@
  * card padding-left is 18px, so we need 68 - 18 = 50px additional left padding.
  */
 .missionHeader {
-  padding-left: 50px;
+  padding-left: 58px;
   min-height: 66px;
   display: flex;
   flex-direction: column;

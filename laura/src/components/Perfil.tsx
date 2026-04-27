@@ -9,8 +9,6 @@ import {
   InfoFilled,
   SignOutFilled,
   ChevronRightFilled,
-  ToggleLeftFilled,
-  ToggleRightFilled,
   WalletCreditCardFilled,
   AddCircleFilled,
 } from '@fluentui/react-icons';
@@ -31,11 +29,9 @@ function SettingToggle({ label, description, enabled, onToggle }: SettingToggleP
         <span className={styles.settingLabel}>{label}</span>
         {description && <span className={styles.settingDesc}>{description}</span>}
       </div>
-      {enabled ? (
-        <ToggleRightFilled className={styles.toggleOn} />
-      ) : (
-        <ToggleLeftFilled className={styles.toggleOff} />
-      )}
+      <div className={`${styles.toggle} ${enabled ? styles.toggleOn : styles.toggleOff}`}>
+        <div className={styles.toggleKnob} />
+      </div>
     </button>
   );
 }
@@ -83,8 +79,8 @@ export default function Perfil() {
           <PersonFilled className={styles.avatarIcon} />
         </div>
         <div className={styles.profileInfo}>
-          <span className={styles.profileName}>Cuidador de Manuel</span>
-          <span className={styles.profileEmail}>cuidador@familia.com</span>
+          <span className={styles.profileName}>Laura</span>
+          <span className={styles.profileEmail}>laura@gmail.com</span>
         </div>
         <button type="button" className={styles.editBtn}>Editar</button>
       </div>
