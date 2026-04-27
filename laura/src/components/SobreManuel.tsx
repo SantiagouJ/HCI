@@ -12,7 +12,6 @@ import NewMissionPopup from './NewMissionPopup';
 const rewards = [
   { id: 1, emoji: '🍎', title: 'Ensalada de frutas' },
   { id: 2, emoji: '🍰', title: 'Miloja' },
-  { id: 3, emoji: '🎬', title: 'Película favorita' },
 ];
 
 export default function SobreManuel() {
