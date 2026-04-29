@@ -1,0 +1,222 @@
+/* ── Gaze Dot ─────────────────────────────────────────────── */
+.gazeDot {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 80, 80, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px rgba(255, 80, 80, 0.6);
+  /* No CSS transition — renders at raw prediction coords every frame */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── "All zones read" advance banner ─────────────────────── */
+.advanceBanner {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #469fff;
+  color: #fff;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(70, 159, 255, 0.4);
+  z-index: 9000;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── Panel ────────────────────────────────────────────────── */
+.panel {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  background: #1e1e2e;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  min-width: 210px;
+  overflow: hidden;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13px;
+  color: #e2e2f0;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e2e2f0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.header:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #555;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.statusActive {
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.7);
+}
+
+.statusCalib {
+  background: #facc15;
+  box-shadow: 0 0 6px rgba(250, 204, 21, 0.7);
+  animation: blink 0.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.headerLabel {
+  flex: 1;
+  text-align: left;
+}
+
+.chevron {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+/* ── Body ─────────────────────────────────────────────────── */
+.body {
+  padding: 0 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+
+.stat {
+  color: #a0a0c0;
+  font-size: 12px;
+}
+
+.stat strong {
+  color: #e2e2f0;
+  font-weight: 700;
+}
+
+.live {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 0.05em;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.calibLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #facc15;
+  letter-spacing: 0.04em;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ── Zone chips ───────────────────────────────────────────── */
+.zones {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.zoneChip {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #7070a0;
+  transition: background 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+
+.zoneChipDone {
+  background: rgba(74, 222, 128, 0.18);
+  color: #4ade80;
+}
+
+/* ── Action buttons ───────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  flex: 1;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn:active { transform: scale(0.96); }
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btnStart  { background: #469fff; color: #fff; }
+.btnStart:hover:not(:disabled) { background: #2e8fee; }
+
+.btnStop   { background: #f87171; color: #fff; }
+.btnStop:hover { background: #ef4444; }
+
+.btnExport { background: #22c55e; color: #fff; flex: 0 0 auto; }
+.btnExport:hover:not(:disabled) { background: #16a34a; }
+
+.btnClear  { background: rgba(255,255,255,0.1); color: #a0a0c0; flex: 0 0 auto; padding: 7px 9px; }
+.btnClear:hover:not(:disabled) { background: rgba(255,100,100,0.2); color: #f87171; }
+
+/* ── Error ────────────────────────────────────────────────── */
+.error {
+  color: #f87171;
+  font-size: 11px;
+  margin: 0;
+  padding: 6px 0 0;
+}

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import MissionCard, { type Mission } from './components/MissionCard';
+import EyeTrackerPanel from './components/EyeTrackerPanel';
 import styles from './App.module.css';
 
 const missions: Mission[] = [
@@ -37,16 +38,21 @@ export default function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [completedMissions, setCompletedMissions] = useState<Set<number>>(new Set());
 
+  // Fallback auto-advance — resets whenever currentIndex changes so the
+  // eye-tracker advancing a mission doesn't cause a double-skip.
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % missions.length);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, []);
+    }, 8000);
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
   const currentMission = missions[currentIndex];
   const isCurrentCompleted = completedMissions.has(currentMission.id);
+
+  const handleMissionRead = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % missions.length);
+  }, []);
 
   const handleToggleComplete = (missionId: number) => {
     setCompletedMissions((prev) => {
@@ -62,24 +68,30 @@ export default function App() {
 
   return (
     <div className={styles.screen}>
+      {/* Eye tracking panel — floating top-right */}
+      <EyeTrackerPanel currentMission={currentMission} onMissionRead={handleMissionRead} />
+
       {/* Title */}
-      <h1 className={styles.title}>Toca la nota para 
-        <br />completar la misión</h1>
+      <h1 className={styles.title} data-track="app-title">
+        Toca la nota para
+        <br />completar la misión
+      </h1>
 
       {/* Carousel */}
-      <div 
+      <div
         className={styles.carousel}
+        data-track="carousel"
         style={{ transform: `rotate(${currentMission.rotation}deg)` }}
       >
-        <MissionCard 
-          mission={currentMission} 
+        <MissionCard
+          mission={currentMission}
           isCompleted={isCurrentCompleted}
           onToggle={() => handleToggleComplete(currentMission.id)}
         />
       </div>
 
       {/* Dots indicator */}
-      <div className={styles.dots}>
+      <div className={styles.dots} data-track="dot-indicator">
         {missions.map((_, index) => (
           <span
             key={index}
@@ -89,7 +101,7 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <div className={styles.footer}>
+      <div className={styles.footer} data-track="footer">
         <p className={styles.footerText}>Con cariño de Laura ❤️</p>
       </div>
     </div>
